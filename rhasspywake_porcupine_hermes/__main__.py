@@ -25,6 +25,12 @@ def main():
     """Main method."""
     parser = argparse.ArgumentParser(prog="rhasspy-wake-porcupine-hermes")
     parser.add_argument(
+        "--access-key",
+        required=False,
+        action="append",
+        help="Access key to unlock custom ppn",
+    )
+    parser.add_argument(
         "--keyword",
         required=True,
         action="append",
@@ -164,6 +170,7 @@ def main():
     client = mqtt.Client()
     hermes = WakeHermesMqtt(
         client,
+        args.access_key,
         args.keyword,
         keyword_names,
         sensitivities,
