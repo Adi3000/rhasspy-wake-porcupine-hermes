@@ -43,7 +43,7 @@ class SiteInfo:
     detection_thread: typing.Optional[threading.Thread] = None
     audio_buffer: bytes = bytes()
     first_audio: bool = True
-    porcupine: typing.Optional[pvporcupine.porcupine.Porcupine] = None
+    porcupine: typing.Optional[pvporcupine.Porcupine] = None
 
     # Queue of (bytes, is_raw)
     wav_queue: "queue.Queue[typing.Tuple[bytes, bool]]" = field(
@@ -87,7 +87,7 @@ class WakeHermesMqtt(HermesClient):
         lang: typing.Optional[str] = None,
     ):
         super().__init__(
-            "rhasspywake_porcupine_hermes",
+            "rhasspywake__hermes",
             client,
             sample_rate=sample_rate,
             sample_width=sample_width,
