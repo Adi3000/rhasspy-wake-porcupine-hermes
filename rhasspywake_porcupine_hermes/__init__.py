@@ -88,7 +88,7 @@ class WakeHermesMqtt(HermesClient):
         lang: typing.Optional[str] = None,
     ):
         super().__init__(
-            "rhasspywake__hermes",
+            "rhasspywake_porcupine_hermes",
             client,
             sample_rate=sample_rate,
             sample_width=sample_width,
